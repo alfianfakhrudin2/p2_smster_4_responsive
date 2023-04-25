@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="../../asset/css/Auth/Style.css">
+    <link rel="stylesheet" href="../../asset/css/main.css">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="form-image">
+            
+            <img src="../../asset/img/welcome1.png" alt="">
+        </div>
+        <div class="form">
+            <div class="form-header">
+                <div class="title">Login</div>
+            </div>
+            <form method="post" action="">
+                <!-- <?php if($controller->error !=  '') { ?>
+                    <div class="alert  alert-danger" role="alert"><?= $controller->error?></div>
+                <?php } ?> -->
+                
+                <div class="txt_field">
+                    <input type="text" name="username" id="username" required>
+                    <span></span>
+                    <label for="username">Username</label>
+                </div>
+                <div class="txt_field">
+                    <input type="password" name="password" id="password" required>
+                    <span></span>
+                    <label for="password">Password</label>
+                </div>
+                <div class="txt_field">
+                    <input type="text" name="confirmcaptcha" id="captcha"  required data_parsley_trigger="keyup" value="" required>
+                    <span></span>
+                    <label for="captcha">Enter Captcha!</label>
+                </div>
+                <label for="captcha-code" style="text-align: left;">Captcha code</label>
+                <!-- <div class="g-recaptcha" data-sitekey="6LdCGKslAAAAANReVemAZvNj6LRXugSAoxyd1ln0"></div> -->
+                <div class="captcha-wrap">
+                    <div id="CaptchaImageCode">
+                        <canvas id="CapCode" class="capcode" width="300" height="80"></canvas>
+                    </div>
+                    <input type="button" class="ReloadBtn" onclick="CreateCaptcha()">
+                </div>
+                <!-- <div style="margin-bottom: 20px;">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Remember Me</label>
+                </div> -->
+                <button type="submit" name="login" id="login" class="btn">Sign in</button>
+                <p class="signup_link">
+                    <a href="register.php" style="color: #6c5ce7;">Forgot Password?</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<!-- COPY SECRET KEY CAPTCHA GOOGLE -->
+<!-- 6LdCGKslAAAAAJmhmnav7tNtKRIpuMHv2drsUaIA -->
