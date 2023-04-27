@@ -1,15 +1,17 @@
 *{
-    /* padding: 0px;
-    margin: 0px; */
+    padding: 0px;
+    margin: 0px;
 }
+
 nav {
-    background-color: #688ea4;
+    /* background-color: #688ea4; */
     width: 100%;
     float: left;
     position: fixed;
 }
+
 .sidenav {
-    background-color: #688ea4;
+    background-color: #282D49;
     height: 100%;
     width: 0;
     position: fixed;
@@ -21,13 +23,19 @@ nav {
     padding-top: 60px;
 }
 .sidenav a {
+    align-items: center;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: white;
     display: block;
     transition: 0.3s;
-    margin-top: 10px;
+    margin-top: 16px;
+}
+
+.sidenav a img{
+    width: 20px;
+    height: 20px;
 }
 
 .sidenav a:hover {
@@ -35,14 +43,29 @@ nav {
 }
 
 .sidenav img{
-    width: 100%;
+    width: 80%;
 }
 
 .sidenav .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
+    right: 5px;
     font-size: 36px;
     margin-left: 560px;
     color: white;
 }
+
+/* navbar horizontal */
+nav{
+    background-color: #688ea4;
+    color: white; 
+    width:100%; 
+    padding:20px;
+    width: 100%;
+    position: fixed;
+}
+
+/* .hero{
+    margin-top: 50px;
+    font-size: 29px;
+} */
