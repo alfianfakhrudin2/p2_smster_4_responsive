@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="../../asset/css/Dashboard.css">
 </head>
 <body>
+
+    <!-- SIDEBAR -->
     <!-- Fixed navbar -->
         <div id="mySidenav" class="sidenav col-12 col-12 col-m-12 col-sm-12">
-            <img src="../../asset/img/logos.png" alt="">
+            <img src="../../asset/img/logoAdmin.png" alt="">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <!--"&times;" akan menjadi tanda silang (x) pada bagian tombol dashboard. "javascript:void(0) akan mengembalikan nilai undefined, dimana ketika button tersebut ditekan, browser akan tetap berada di halaman sekarang (halaman yang dibuka. "-->
             <a href="#">
@@ -35,17 +37,80 @@
             </a>
             <a href="#">
                 <img src="../../asset/img/moon.png" alt="iconcoy" id="icon">
-                
             </a>
             <div class="theme">
             </div>
         </div>
-        <nav>
-            <span style="font-size:30px; cursor:pointer;" onclick="openNav()">&#9776; Dashboard</span>
+        
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <a href="#" class="navbar-brand"><img class="image" src="../../asset/img/logoAdmin.png" alt="logo" /></a>
+            <ul class="navigation">
+                <li>
+                    <a href="#home">
+                        <svg width="25" height="24" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.83331 16.6667L18.4176 4.99924C19.635 4.02532 21.365 4.02532 22.5823 4.99924L37.1666 16.6667"
+                                stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M16.2961 6.74907L9.6294 12.1657C8.41899 13.1492 7.81377 13.6409 7.49022 14.3207C7.16669 15.0004 7.16669 15.7802 7.16669 17.3399V23.3334C7.16669 29.6187 7.16669 32.7615 9.1193 34.714C11.0719 36.6667 14.2146 36.6667 20.5 36.6667C26.7854 36.6667 29.9282 36.6667 31.8807 34.714C33.8334 32.7615 33.8334 29.6187 33.8334 23.3334V17.3399C33.8334 15.7802 33.8334 15.0004 33.5099 14.3207C33.1862 13.6409 32.581 13.1492 31.3707 12.1657L24.704 6.74907C22.6904 5.11297 21.6835 4.29492 20.5 4.29492C19.3165 4.29492 18.3097 5.11297 16.2961 6.74907Z"
+                                stroke="white" stroke-width="3" />
+                            <path d="M16.75 27.0833H24.25" stroke="white" stroke-width="3" stroke-linecap="round" />
+                        </svg>Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#data">
+                        <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.007 33.8499L10.007 33.8501H10.02H34.5V36.1834H10C9.09163 36.1834 7.95533 35.8792 7.05679 35.1672C6.17628 34.4694 5.5 33.3631 5.5 31.6834V8.3501C5.5 6.67046 6.17628 5.5641 7.05679 4.86635C7.95533 4.1543 9.09163 3.8501 10 3.8501H31.6667C33.2289 3.8501 34.5 5.12124 34.5 6.68343V29.5001H33.415H33.4011L33.3873 29.5009C33.3432 29.5033 33.3062 29.5103 33.279 29.5168H10.0183V29.5166L10.006 29.5169C9.62469 29.5264 9.16372 29.5978 8.75734 29.84C8.33091 30.0941 8.00298 30.5146 7.88256 31.1328L7.88252 31.1328L7.88149 31.1385C7.85109 31.3047 7.83333 31.4848 7.83333 31.6834C7.83333 32.4813 8.11402 33.0535 8.58604 33.411C9.0312 33.7481 9.57496 33.8387 10.007 33.8499ZM31.6667 27.1834H32.1667V26.6834V6.68343V6.18343H31.6667H28.3333H27.8333V6.68343V17.5411L25.2236 16.2362L25 16.1244L24.7764 16.2362L22.1667 17.5411V6.68343V6.18343H21.6667H10V6.18325L9.98667 6.18361C9.56326 6.1949 9.02452 6.28565 8.58223 6.62293C8.11373 6.98019 7.83333 7.55172 7.83333 8.3501V26.6834V27.1834H8.33333H31.6667Z"
+                                fill="white" stroke="white" />
+                        </svg>Data
+                    </a>
+                </li>
+            </ul>
+            <a href="https://www.youtube.com/" class="logoutnyaa">
+                <svg class="logouticon" width="24" height="24" viewBox="0 0 40 40" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M23.3333 13.3334V10.0001C23.3333 9.11603 22.9821 8.26818 22.357 7.64306C21.7319 7.01794 20.8841 6.66675 20 6.66675H8.33333C7.44928 6.66675 6.60143 7.01794 5.97631 7.64306C5.35119 8.26818 5 9.11603 5 10.0001V30.0001C5 30.8841 5.35119 31.732 5.97631 32.3571C6.60143 32.9822 7.44928 33.3334 8.33333 33.3334H20C20.8841 33.3334 21.7319 32.9822 22.357 32.3571C22.9821 31.732 23.3333 30.8841 23.3333 30.0001V26.6667"
+                        stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M11.6667 20H35M35 20L30 15M35 20L30 25" stroke="white" stroke-width="4" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <span>LOGOUT</span></a>
+            <button class="navbar-toggler" onclick="openNav()">
+                <span></span>
+            </button>
+            <!-- <span style="font-size:30px; cursor:pointer;" onclick="openNav()">&#9776; Dashboard</span> -->
+
         </nav>
-        <div class="hero">
-            <p>Lorem ipsum dolor sit amet.</p>
+        <section class="container" id="home">
+            <h2><i class="fab fa-html5"></i></h2>
+
+        <div class="container-isi">
+            <span class="tulisanAdmin">WELCOME ADMIN,</span>
+            <div class="bungkus">
+                <div class="kiri">
+                    <div class="konten">
+                        <div class="konten-tulisan">
+                            <h2 class="konten-judul">
+                                Start input latest info,
+                                of Mobile legends Heroes!
+                            </h2>
+                            <p class="konten-deskripsi">Come on! admins, let's update the information about Mobile
+                                legends Heroes</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="kanan">
+                    <img class="gambar-konten" src="../../asset/img/mlwomen.png" alt="women">
+                </div>
+            </div>
+
         </div>
+    </section>
     <script src="../../asset/Js/side.js"></script>
     <script src="../../asset/Js/darkmode.js"></script>
 </body>
