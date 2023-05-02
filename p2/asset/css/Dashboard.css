@@ -206,11 +206,13 @@ a.logoutnyaa:hover {
 }
 
 .konten-judul {
-    font-size: 36px;    
+    font-size: 36px;
+    color: var(--fonts);    
 }
 
 .konten-deskripsi {
     font-size: 18px;
+    color: var(--fonts);    
 }
 
 .konten-tulisan {
@@ -312,7 +314,7 @@ a.logoutnyaa:hover {
         gap: 56px;
     }
 
-    .kiri-kanan {
+    .bungkus {
         display: flex;
         flex-direction: column-reverse;
     }
