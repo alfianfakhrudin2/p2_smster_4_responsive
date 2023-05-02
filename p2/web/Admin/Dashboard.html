@@ -5,7 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <!-- BOOTSRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- my css -->
     <link rel="stylesheet" href="../../asset/css/Dashboard.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,7 +22,7 @@
             <img src="../../asset/img/logoAdmin.png" alt="">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <!--"&times;" akan menjadi tanda silang (x) pada bagian tombol dashboard. "javascript:void(0) akan mengembalikan nilai undefined, dimana ketika button tersebut ditekan, browser akan tetap berada di halaman sekarang (halaman yang dibuka. "-->
-            <a href="#">
+            <a href="#home">
                 <svg width="25" height="24" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M3.83331 16.6667L18.4176 4.99924C19.635 4.02532 21.365 4.02532 22.5823 4.99924L37.1666 16.6667"
@@ -27,7 +34,7 @@
                 </svg>
                 Home
             </a>
-            <a href="#">
+            <a href="#data">
                 <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M10.007 33.8499L10.007 33.8501H10.02H34.5V36.1834H10C9.09163 36.1834 7.95533 35.8792 7.05679 35.1672C6.17628 34.4694 5.5 33.3631 5.5 31.6834V8.3501C5.5 6.67046 6.17628 5.5641 7.05679 4.86635C7.95533 4.1543 9.09163 3.8501 10 3.8501H31.6667C33.2289 3.8501 34.5 5.12124 34.5 6.68343V29.5001H33.415H33.4011L33.3873 29.5009C33.3432 29.5033 33.3062 29.5103 33.279 29.5168H10.0183V29.5166L10.006 29.5169C9.62469 29.5264 9.16372 29.5978 8.75734 29.84C8.33091 30.0941 8.00298 30.5146 7.88256 31.1328L7.88252 31.1328L7.88149 31.1385C7.85109 31.3047 7.83333 31.4848 7.83333 31.6834C7.83333 32.4813 8.11402 33.0535 8.58604 33.411C9.0312 33.7481 9.57496 33.8387 10.007 33.8499ZM31.6667 27.1834H32.1667V26.6834V6.68343V6.18343H31.6667H28.3333H27.8333V6.68343V17.5411L25.2236 16.2362L25 16.1244L24.7764 16.2362L22.1667 17.5411V6.68343V6.18343H21.6667H10V6.18325L9.98667 6.18361C9.56326 6.1949 9.02452 6.28565 8.58223 6.62293C8.11373 6.98019 7.83333 7.55172 7.83333 8.3501V26.6834V27.1834H8.33333H31.6667Z"
@@ -35,13 +42,10 @@
                 </svg>
                 Data
             </a>
-            <a href="#">
-                <img src="../../asset/img/moon.png" alt="iconcoy" id="icon">
-            </a>
             <div class="theme">
+                <img src="../../asset/img/moon.png" alt="iconcoy" id="icon"> Theme
             </div>
         </div>
-        
         <!-- NAVBAR -->
         <nav class="navbar">
             <a href="#" class="navbar-brand"><img class="image" src="../../asset/img/logoAdmin.png" alt="logo" /></a>
@@ -69,7 +73,7 @@
                     </a>
                 </li>
             </ul>
-            <a href="https://www.youtube.com/" class="logoutnyaa">
+            <a href="https://www.youtube.com/" class="logoutnyaa" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <svg class="logouticon" width="24" height="24" viewBox="0 0 40 40" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -78,14 +82,15 @@
                     <path d="M11.6667 20H35M35 20L30 15M35 20L30 25" stroke="white" stroke-width="4" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg>
-                <span>LOGOUT</span></a>
+                <span>LOGOUT</span>
+            </a>
             <button class="navbar-toggler" onclick="openNav()">
                 <span></span>
             </button>
             <!-- <span style="font-size:30px; cursor:pointer;" onclick="openNav()">&#9776; Dashboard</span> -->
 
         </nav>
-        <section class="container" id="home">
+        <section class="section1" id="home">
             <h2><i class="fab fa-html5"></i></h2>
 
         <div class="container-isi">
@@ -102,7 +107,6 @@
                                 legends Heroes</p>
                         </div>
                     </div>
-
                 </div>
                 <div class="kanan">
                     <img class="gambar-konten" src="../../asset/img/mlwomen.png" alt="women">
@@ -111,10 +115,27 @@
         </div>
     </section>
 
-    <section id="data" class="container">
+    <section id="data" class="section1">
         <h2><i class="fab fa-css3-alt"></i></h2>
     </section>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content modalidun">
+            <div class="modal-header futer-header">
+                &nbsp  &nbsp Do you want to LogOut?
+                <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>        
+            <div class="modal-footer futer-modal">
+                <button type="button" class="btn tmbl-logout btn-outline-danger" >YES</button>
+                <button type="button" class="btn tmbl2-logout btn-outline-success" data-bs-dismiss="modal">NO</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="../../asset/Js/side.js"></script>
     <script src="../../asset/Js/darkmode.js"></script>
 </body>

@@ -19,9 +19,8 @@ body{
     background-color: var(--primary);
 }
 
-
+/* styling button logout */
 .image {
-    padding-top: 10px;
     width: auto;
     height: 64px;
 }
@@ -30,13 +29,57 @@ a.logoutnyaa {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 0 30px;
+    padding: 0px 30px;
 }
 
 a.logoutnyaa:hover {
     background-color: rgba(255, 255, 255, 0.15);
 
 }
+
+.futer-header{
+    border: none;
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+.futer-modal{
+    border: none;
+    justify-content: space-around;
+}
+
+.tmbl-logout{
+    /* position: absolute; */
+width: 200px;
+height: 70px;
+left: 38px;
+top: 100.84px;
+background: #36539F;
+box-shadow: 2px 4px 6px rgba(255, 255, 255, 0.3);
+border-radius: 10px;
+color: whitesmoke;
+border: none;
+
+}
+
+.tmbl2-logout{
+    box-sizing: border-box;
+    color: whitesmoke;
+    width: 200px;
+    height: 70px;
+    left: 332px;
+    top: 100.84px;
+    border: 5px solid #36539F;
+    filter: drop-shadow(2px 4px 6px rgba(255, 255, 255, 0.3));
+    border-radius: 10px;
+}
+
+.tmbl2-logout :hover{
+    background: #36539F;
+}
+/* Akhir styling button logout */
+
 
 /* NAVBAR */
 .navbar {
@@ -68,6 +111,7 @@ a.logoutnyaa:hover {
     line-height: inherit;
     padding: 0 30px;
     font-size: 22px;
+    margin-bottom:  20px;
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 2px;
@@ -108,6 +152,12 @@ a.logoutnyaa:hover {
     display: none;
 }
 
+.modalidun{
+    background-color: #282D49;
+    color: white;
+}
+/* AKHIR NAVBAR */
+
 /* SIDEBAR */
 .sidenav {
     background-color: #282D49;
@@ -133,9 +183,20 @@ a.logoutnyaa:hover {
     margin-top: 16px;
 }
 
-.sidenav a img{
+.sidenav .theme {
+    padding: 8px 8px 8px 32px;
+    color: whitesmoke;
+    font-size: 25px;
+    /* background-color: red; */
+    width: 50%;
+    align-items: center;
+    display: block;
+}
+
+.sidenav .theme img{
     width: 20px;
     height: 20px;
+    margin-rigth: 10px;
 }
 
 .sidenav a:hover {
@@ -154,17 +215,19 @@ a.logoutnyaa:hover {
     margin-left: 560px;
     color: white;
 }
+/* AKHIR SIDEBAR */
+
 
 /* CSS CONTAINER KE 1 */
-.container {
+.section1 {
     width: 100%;
+    /* background-color: red; */
     position: relative;
     min-height: 100vh;
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .container-isi {
@@ -232,6 +295,7 @@ a.logoutnyaa:hover {
     width: auto;
 }
 
+
 #data {
     background-color: #002561;
 }
@@ -239,6 +303,7 @@ a.logoutnyaa:hover {
 #logout {
     background-color: #333;
 }
+
 
 @media screen and (max-width: 768px){
 
@@ -285,6 +350,7 @@ a.logoutnyaa:hover {
     a.logoutnyaa .logouticon {
         width: 40px;
         height: 40px !important;
+        margin-bottom: 20px;
     }
 
     a.logoutnyaa span {
