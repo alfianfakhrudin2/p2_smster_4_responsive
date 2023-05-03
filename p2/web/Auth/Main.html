@@ -21,10 +21,6 @@
                 <div class="title">Login</div>
             </div>
             <form method="post" action="" id="formValidation">
-                <!-- <?php if($controller->error !=  '') { ?>
-                    <div class="alert  alert-danger" role="alert"><?= $controller->error?></div>
-                <?php } ?> -->
-                
                 <div class="txt_field">
                     <input type="text" name="username" id="username" required>
                     <span></span>
@@ -54,7 +50,7 @@
                     <input type="checkbox" name="remember" id="remember">
                     <label for="remember">Remember Me</label>
                 </div> -->
-                <button type="submit" name="login" id="login" class="btn" onclick="auth()">Sign in</button>
+                <input class="btn btn-dark btn-lg" type="button" style="background-color: #415A80;" value="Login" id="submit" onclick="validasi()"/>
                 <p class="signup_link">
                     <a href="../../web/Admin/Dashboard.html" style="color: #6c5ce7;">Forgot Password?</a>
                 </p>
@@ -66,6 +62,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script> -->
     <!-- <script src="../../asset/Js/jquery-1.9.0.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../asset/Js/login.js"></script>
 </body>
 </html>

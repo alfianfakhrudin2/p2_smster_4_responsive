@@ -1,448 +1,776 @@
-*{
-    padding: 0;
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --padding-default: 1rem 2rem;
+    --padding-leftright-default: 0rem 2rem;
+    --padding-updown-default: 2rem 0rem;
+    --padding-tombol: 0.5rem 1rem;
+
+    /* warna */
+    --bg: #4a4758;
+    --bg2: #44414e;
+    --fg: #34323f;
+    --white: #fefefe;
+
+    /* tombol default */
+    --btn-okgo: #0cb37b;
+    --btn-destroy: #dc143c;
+    --btn-warning: #dda919;
+    --btn-info: #00ffff;
+    --btn-accent: #8a2be2;
+    --btn-accent2: #664483;
+    
+    --color-disabled: #ccc;
+    --bg-disabled: #ccc;
+    
+    /* tombol hover */
+    --btn-okgo-hover: #0d9467;
+    --btn-destroy-hover: #b91838;
+    --btn-warning-hover: #c49618;
+    --btn-info-hover: #17cece;
+    --btn-accent-hover: #664483;
+    --btn-accent2-hover: #4c3163;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scrollbar-width: small;
+    scrollbar-color: var(--btn-accent) #ffffff;
     scroll-behavior: smooth;
 }
 
-:root{
-    --primary: #edf2fc;
-    --fonts: #212121;
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
 }
 
-.modegelap{
-    --primary: #282a36;
-    --fonts: whitesmoke;
+*::-webkit-scrollbar-track {
+    background: var(--fg);
 }
 
-body{
-    background-color: var(--primary);
+*::-webkit-scrollbar-thumb {
+    background-color: var(--btn-accent);
+    /* border: 5px solid var(--fg); */
 }
 
-/* styling button logout */
-.image {
-    width: auto;
-    height: 64px;
-}
-
-a.logoutnyaa {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 0px 30px;
-}
-
-a.logoutnyaa:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-
-}
-
-.futer-header{
-    border: none;
-    text-align: center;
-    font-family: 'Kanit', sans-serif;
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--btn-accent-hover);
+    /* border: 5px solid var(--fg); */
 }
 
 
-.futer-modal{
-    border: none;
-    justify-content: space-around;
+/* ===================================================== */
+
+
+body {
+    background-color: var(--bg);
 }
 
-.tmbl-logout{
-    /* position: absolute; */
-width: 200px;
-height: 70px;
-left: 38px;
-/* top: 1410.84px; */
-background: #36539F;
-box-shadow: 2px 4px 6px rgba(255, 255, 255, 0.3);
-border-radius: 10px;
-color: whitesmoke;
-border: none;
-text-align: center;
-align-items: vertical;
+/* status utilities */
+:disabled, .disabled {
+    filter: grayscale(85%);
+    cursor: not-allowed !important;
 }
 
-.tmbl2-logout{
-    box-sizing: border-box;
-    color: whitesmoke;
-    width: 200px;
-    height: 70px;
-    left: 332px;
-    top: 100.84px;
-    border: 5px solid #36539F;
-    filter: drop-shadow(2px 4px 6px rgba(255, 255, 255, 0.3));
-    border-radius: 10px;
-}
-
-.tmbl2-logout :hover{
-    background: #36539F;
-}
-/* Akhir styling button logout */
-
-
-/* NAVBAR */
-.navbar {
-    background-color: #282D49;
-    color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    width: 100%;
-    height: 80px;
-    line-height: 80px;
-    font-size: 18px;
-    padding: 0 30px;
-    position: fixed;
+.sticky {
+    position: sticky;
     top: 0;
-    left: 0;
-    z-index: 1;
+    width: 100%
+}.sticky + .content {
+    padding-top: 173px;
+  }
+
+/* Header */
+header {
+    background-color: var(--fg);
+    color: var(--white);
+    min-width: 100%;
+    padding: var(--padding-default);
+    padding-top: 3rem;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.navbar a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.navbar a.navbar-brand {
-    /* float: left; */
-    height: inherit;
-    line-height: inherit;
-    padding: 0 30px;
-    font-size: 22px;
-    margin-bottom:  20px;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 2px;
-}
-
-.navbar a.navbar-brand span {
-    font-size: 28px;
-    font-weight: 700;
-}
-
-.navbar ul {
-    /* float: right; */
-    list-style: none;
-    height: inherit;
-    line-height: inherit;
-    padding: 0 50px;
-}
-
-.navbar ul li {
-    display: inline-block;
-}
-
-.navbar ul li a {
-    display: flex;
-    text-align: center;
-    min-width: 120px;
-    padding: 0 30px;
-    justify-content: center;
+    gap: 2rem;
+    justify-content: flex-start;
     align-items: center;
-    gap: 10px;
 }
 
-.navbar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+.menu, .menu-right {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.menu a {
+    color: var(--bg-disabled);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 300ms;
+}
+.menu a:hover {
+    color: var(--white);
 }
 
-.navbar .navbar-toggler {
+.menu-right {
+    margin-left: auto;
+    order: 2;
+}
+
+.copyright-version a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: all 300ms;
+}
+.copyright-version a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+.copyright-version {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+}
+
+
+.loading{
     display: none;
 }
 
-.modalidun{
-    background-color: #282D49;
-    color: white;
-}
-/* AKHIR NAVBAR */
-
-/* SIDEBAR */
-.sidenav {
-    background-color: #282D49;
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sidenav a {
-    align-items: center;
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
-    display: block;
-    transition: 0.3s;
-    margin-top: 16px;
-}
-
-.sidenav .theme {
-    padding: 8px 8px 8px 32px;
-    color: whitesmoke;
-    font-size: 25px;
-    /* background-color: red; */
-    width: 50%;
-    align-items: center;
-    display: block;
-}
-
-.sidenav .theme img{
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-}
-
-.sidenav a:hover {
-    color: darkgrey;
-}
-
-.sidenav img{
-    width: 80%;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 5px;
-    font-size: 36px;
-    margin-left: 560px;
-    color: white;
-}
-/* AKHIR SIDEBAR */
-
-
-/* CSS CONTAINER KE 1 */
-.section1 {
+#loader{
+    background: #F2F2F2 url(../../asset/img/load.gif) no-repeat center;
+    height: 100vh;
     width: 100%;
-    /* background-color: red; */
-    position: relative;
-    min-height: 100vh;
-    color: #fff;
+    position: fixed;
+    z-index: 999;
+}
+
+/* ===================================================== */
+
+/* kontainer-admin */
+.kontainer-admin {
+    margin: 2rem auto;
+    padding: var(--padding-default);
+    padding-block: 2rem;
+    width: 100%;
+    max-height: 500px;
+    max-width: 1280px;
+    background-color: var(--bg2);
+    background-image: 
+        linear-gradient(to bottom, 
+        rgba(98, 100, 114, 0.52),
+        var(--fg)),
+        url('https://cdn-www.bluestacks.com/bs-images/mlbb-hero-tier-list-june2021-id-banner.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     align-items: center;
+    /* border-radius: 8px; */
+
+}
+
+.kontainer-admin-kiri {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.kontainer-admin-kiri .admin-username {
+    display: inline-flex;
     justify-content: center;
-}
-
-.container-isi {
-    display: flex;
-    flex-direction: column;
-    padding: 64px;
-    max-width: 1080px;
-}
-
-.bungkus {
-    display: flex;
-}
-
-.container-isi .kiri {
-    display: flex;
-    /* padding: 32px; */
-    color: #232323;
-    /* justify-content: center; */
     align-items: center;
-    /* background-color: black; */
-}   
-
-.container-isi .kiri .konten {
-    display: flex;
-    flex-direction: column;
-    /* gap: 120px; */
-    max-width: 80%;
-    /* justify-content: space-between; */
-}
-
-.tulisanAdmin {
-    margin-top: 60px;
-    padding: 16px 24px;
-    background: #36539F;
-    color: white;
-    font-size: 26px;
-    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--white);
+    background-color: var(--fg);
+    padding: var(--padding-tombol);
     max-width: max-content;
 }
 
-.konten-judul {
-    font-size: 36px;
-    color: var(--fonts);    
+.kontainer-admin-kiri .admin-title {
+    font-size: 24px;
+    color: var(--white);
 }
 
-.konten-deskripsi {
-    font-size: 18px;
-    color: var(--fonts);    
+.kontainer-admin-kiri .admin-desc {
+    font-size: 14px;
+    line-height: 2em;
+    color: var(--white);
 }
 
-.konten-tulisan {
+
+/* kontainer tombol */
+.kontainer-tombol {
+    min-width: 100%;
+    padding: var(--padding-default);
+    background-color: var(--fg);
+    display: flex;
+    margin: auto;
+}
+
+.kontainer-tombol-2 {
+    min-width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
+}
+
+.kontainer-tombol-kiri {
+    margin: auto;
+    width: 70%;
+    height: 100%;
+    /* background-color: tomato; */
+    display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.kontainer-tombol-kanan {
+    margin: auto;
+    width: 30%;
+    height: 100%;
+    /* background-color: black; */
+    display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.icon-cari {
+    color: var(--white);
+}
+
+input.searchbar {
+    outline: none;
+    border: none;
+    width: 100%;
+    padding: var(--padding-tombol);
+    background-color: var(--bg);
+    font-size: 12px;
+    color: var(--white);
+}
+
+.tombol-logout {
+    color: var(--white);
+    font-size: 1rem;
+    padding: 1.3rem;
+    width: 1.3rem;
+    height: 1.3rem;
+    background-color: var(--bg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    transition: all 300ms;
+}.tombol-logout:hover {
+    background-color: var(--btn-accent-hover);
+}
+
+/* ===================================================== */
+
+
+/* setting tombol - all */
+.tombol {
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    background-color: var(--btn-accent);
+    color: var(--white);
+    padding: var(--padding-tombol);
+    display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms;
+    cursor: pointer;
+}
+.tombol:hover {
+    border: none;
+    outline: none;
+    background-color: var(--btn-accent2-hover);
+    color: var(--white);
+}
+.tombol-del {
+    border: none;
+    outline: none;
+    background-color: var(--btn-accent2);
+    color: var(--white);
+}
+
+.locksystem {
+    background: var(--bg2);
+}
+
+input.tombol-del-all[type="checkbox"] { display: none; }
+
+input.tombol-del-all[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* ikon gembok ketutup */
+input[type="checkbox"] + label:before {
+    color: var(--btn-okgo);
+    padding-bottom: 3px;
+
+    font-size: 14px;
+    font-family: "Font Awesome 5 Free";
+    content: "\f023";
+    display: inline-flex;
+    vertical-align: middle;
+    font-weight: 900;
+
+
+    -webkit-transition: all .12s;
+    transition: all .12s;
+}
+
+/* teks untuk kunci delete all */
+input.tombol-del-all[type="checkbox"] + label:after {
+    color: var(--white);
+    content: 'Secured';
+    display: inline-flex;
+    margin-left: 1rem;
+    font-size: 14px;
+}
+
+/* icon gembok kebuka */
+input.tombol-del-all[type="checkbox"]:checked + label:before {
+    color: var(--btn-warning);
+
+    font-family: "Font Awesome 5 Free";
+    content: "\f3c1";
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 900;
+}
+
+/* teks kalo kunci kebuka */
+input.tombol-del-all[type="checkbox"]:checked + label:after {
+  content: 'Delete All Active';
+}
+
+/* ini untuk ikon edit dan delete */
+.tombol-icon {
+    border: none;
+    border-radius: 1000px;
+    outline: none;
+    background-color: var(--btn-accent);
+    color: var(--white);
+    padding: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms;
+}
+.tombol-icon.icdelete {
+    border: none;
+    border-radius: 1000px;
+    outline: none;
+    background-color: var(--btn-destroy);
+    color: var(--white);
+    padding: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms;
+}
+
+/* ini buat tombol update yang ada di modal gede */
+.tombol-update {
+    border: none;
+    outline: none;
+    background-color: var(--btn-okgo);
+    color: var(--white);
+}
+.tombol-update:hover {
+    border: none;
+    outline: none;
+    background-color: var(--btn-okgo-hover);
+    color: var(--white);
+}
+
+/* tombol x nya si modal gede */
+.tombol-close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5em 0.7em;
+    font-size: 16px;
+    color: var(--white);
+    background-color: var(--fg);
+    cursor: pointer;
+    transition: all 300ms;
+}
+.tombol-close-modal:hover {
+    color: var(--white);
+    background-color: var(--btn-destroy-hover);
+}
+
+
+/* ===================================================== */
+
+
+/* Setting Table */
+.kontainer-table {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0rem auto;
+    padding-block: 1rem;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.kontainer-table table {
+    /* border: 1px solid #ccc; */
+    color: var(--white);
+}
+
+.kontainer-table table tr th {
+    /* border: 1px solid #ccc; */
+    background-color: var(--fg);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    width: 100%;
+    min-width: 150px;
+    padding: 1rem 1.2rem;
+}
+
+.kontainer-table table tr th.no {
+    min-width: max-content !important;
+}
+
+.kontainer-table table tr th.action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    vertical-align: center;
+}
+
+/* ini setting buat panjangin si table */
+.kontainer-table table tr th.build,
+.kontainer-table table tr th.tips {
+    /* border: 1px solid #ccc; */
+    background-color: var(--fg);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    width: 100%;
+    min-width: 400px;
+    padding: 1rem 1.2rem;
+}
+
+.kontainer-table table tr td {
+    /* border: 1px solid #ccc; */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 4px 1rem;
+    background-color: var(--bg2);
+    text-align: center;
+    vertical-align: center;
+    min-height: 5rem;
+}
+
+/* buat ngebuletin si icon hero */
+img.hero-icon-fix {
+    border-radius: 50%;
+}
+
+
+
+/* ===================================================== */
+
+
+/* Modal Setting */
+.modal {
+    /* overflow: auto; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    width: 50%;
+    max-width: 1080px;
+    height: 70vh;
+    max-height: 940px;
+    background-color: var(--bg);
+    /* border: 1px solid #ccc; */
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.20);
+
+    visibility: hidden;
+    opacity: 0;
+    z-index: -200;
+    transition: all 500ms;
+}
+.modal.active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 200; /* range semua modal itu 200 - 299 enak nya */
+    width: 100%;
+}
+
+.modal .modal-kiri {
+    position: relative;
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.050);
     display: flex;
     flex-direction: column;
-    gap: 16px;
-}
-
-.container-isi .kanan {
-    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.gambar-konten {
-    height: 430px;
-    width: auto;
+/* judul */
+.modal .modal-kiri .judul-modal {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: var(--white);
+    font-weight: 500;
+}
+
+.modal .judul-modal-kanan {
+    position: absolute;
+    top: 1rem;
+    padding: 0.2em 1em;
+    right: 5%;
+    transform: translateX(-5%);
+    font-size: 18px;
+    color: var(--white);
+    font-weight: 500;
+}
+
+/* box nya profile image */
+.modal .modal-kiri .kotak-gambar {
+    position: relative;
+    /* background-color: var(--bg2); */
+    width: 100%;
+    height: 256px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin-block: 2rem;
+}
+
+.modal .modal-kiri .kotak-gambar img{
+    border-radius: 500px;
+    background-color: var(--bg2);
+    /* filter: brightness(80%); */
+    cursor: pointer;
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+}
+
+.modal .modal-kiri .kotak-gambar input,
+.modal .modal-kiri .kotak-gambar input:hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 2rem;
+    width: 6rem;
+    height: 6rem;
+    background-color: red;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 3;
+    cursor: pointer;
+}
+
+/* teks yang ada di bawah buat masukin gambar hero */
+.modal .modal-kiri .caption-profile {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.50);
+    font-style: italic;
+}
+
+.modal .modal-kanan {
+    overflow: auto;
+    width: 70%;
+    height: auto;
+    /* background-color: rgba(255, 255, 255, 0.050); */
+    margin: 0 auto;
+    padding: var(--padding-leftright-default);
+    padding-bottom: 5rem;
+    margin-top: 5rem;
+}
+
+.modal .modal-kanan .modal-kanan-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 1rem;
+}
+
+/* bungkus input nya modal */
+.modal .modal-kanan .modal-kanan-form .bungkus-modal-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+}
+.modal .modal-kanan .modal-kanan-form .bungkus-modal-input .label-input-desc {
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 12px;
+    font-weight: 300;
+    font-style: italic;
+}
+.modal .modal-kanan .modal-kanan-form .bungkus-modal-input .label-input {
+    color: var(--white);
+}
+
+.modal .modal-kanan .modal-kanan-form input.modal-input{
+    position: relative;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: transparent;
+    width: 100%;
+    padding: 1rem;
+    color: var(--white);
+}
+.modal .modal-kanan .modal-kanan-form input.modal-input:hover { border: 1px solid var(--white); }
+.modal .modal-kanan .modal-kanan-form input.modal-input:focus { border: 3px solid var(--white); }
+.modal .modal-kanan .modal-kanan-form input.modal-input:focus::placeholder { color: rgba(255, 255, 255, 0.60); }
+.modal .modal-kanan .modal-kanan-form input.modal-input::placeholder { color: rgba(255, 255, 255, 0.40); }
+
+
+
+
+/* ============ ini buat ganti tema modal konfirmasi2 nya =========== */
+/* Swall Modal */
+/* .swal-overlay {
+    background-color: rgba(34, 34, 34, 0.5);
+    backdrop-filter: blur(5px);
+}
+.swal-modal {
+    background-color: var(--bg);
+}
+
+.swal-title {
+    margin: 0px;
+    font-size: 24px;
+    color: var(--white);
+    margin-bottom: 28px;
+}
+.swal-text {
+    color: var(--white);
+    background-color: var(--bg2);
+    padding: var(--padding-default);
+    display: block;
+    margin: auto;
+    text-align: center;
+} */
+
+.swal-button {
+    padding: var(--padding-tombol);
+    border-radius: 2px;
+    font-size: 12px;
+    border: none;
+}
+.swal-button--confirm{
+    color: var(--white);
+    background-color: var(--btn-accent);
+}
+.swal-button--confirm:not([disabled]):hover,
+.swal-button--confirm:active {
+    background-color: var(--btn-accent-hover);
+}
+
+.swal-button--cancel{
+    color: var(--white);
+    background-color: var(--btn-accent2);
+}
+.swal-button--cancel:not([disabled]):hover,
+.swal-button--cancel:active {
+    background-color: var(--btn-accent2-hover);
 }
 
 
-#data {
-    background-color: #002561;
+
+
+
+/* loading bar */
+.timer-bar-container {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: calc(100% - 10px);
+    height: 3px;
+    z-index: 101;
+    overflow: hidden;
+}
+.timer-bar {
+    height: 4px;
+    position: absolute;
+    background: var(--btn-accent);
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: background .2s ease-in, -webkit-transform 1s linear;
+    transition: transform 1s linear, background .2s ease-in, -webkit-transform 1s linear;
+}
+  
+
+
+
+/* =================== RESPONSIVE ======================= */
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 600px) {
+    /* responsive tampilan mobile disini */
 }
 
-#logout {
-    background-color: #333;
-}
 
-
-@media screen and (max-width: 768px){
-
-    .navbar {
-        padding: 0;
+/* Medium devices (landscape tablets, 768px and up) */
+@media screen and (max-width: 768px) {
+    .kontainer-tombol {
+        flex-direction: column;
+        gap: 2rem;
     }
-
-    .navbar ul {
+    .kontainer-tombol-kiri,
+    .kontainer-tombol-kanan {
         width: 100%;
-        padding: 0;
-        background-color: rgba(0, 0, 0, 0.9);
-        /* height: auto; */
-        height: 100vh;
-        max-height: 0;
-        overflow: hidden;
-        transition: all ease-in-out 0.3s;
     }
 
-
-    .navbar ul.open {
-        max-height: 100vh;
-    }
-
-    .navbar ul li {
-        width: 100%;
-        /* border-bottom: 1px solid rgba(255,255,255,0.3); */
-    }
-
-    .navbar ul li a {
-        padding: 0;
-    }
-
-    a.logoutnyaa {
-        position: absolute;
-        top: 5px;
-        right: 5rem;
+    .kontainer-tombol-kiri {
         display: flex;
         align-items: center;
-        gap: 10px;
-        font-size: 40px;
-        display: block;
+        justify-content: space-between;
     }
 
-    a.logoutnyaa .logouticon {
-        width: 40px;
-        height: 40px !important;
-        margin-bottom: 20px;
-    }
-
-    a.logoutnyaa span {
+    .copyright-version {
         display: none;
     }
 
-    .navbar .navbar-toggler {
-        display: block;
-        position: absolute;
-        height: 40px;
-        top: 20px;
-        right: 20px;
-        background-color: transparent;
-        color: #fff;
-        border: 3px solid #fff;
-        /* border: none; */
-        /* border-radius: 4px; */
-        outline: none;
-        padding: 0 5px;
-        cursor: pointer;
-    }
-
-    .container-isi {
+    .kontainer-admin {
         display: flex;
         flex-direction: column;
-        margin-top: 24px;
-        gap: 56px;
+        margin: 0;
     }
-
-    .bungkus {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    .container-isi .kiri .konten {
-        max-width: 100%;
-    }
-
-    .navbar .navbar-toggler span,
-    .navbar .navbar-toggler span::before,
-    .navbar .navbar-toggler span::after {
-        display: block;
-        content: '';
-        background-color: #fff;
-        height: 3px;
-        width: 28px;
-        border-radius: 4px;
-        transition: all ease-in-out 0.3s;
-    }
-
-    .navbar .navbar-toggler span::before {
-        transform: translateY(-8px);
-    }
-
-    .navbar .navbar-toggler span::after {
-        transform: translateY(5px);
-    }
-
-    .navbar .navbar-toggler.open-navbar-toggler span {
-        /* transform: rotate(90deg); */
-        background-color: transparent;
-        /* transform: scale(0.85) rotate(270deg); */
-    }
-
-    .navbar .navbar-toggler.open-navbar-toggler span::before {
-        transform: translateY(0px) rotate(45deg);
-        /* transform: translateY(0px) scale(0.75) rotate(45deg); */
-    }
-
-    .navbar .navbar-toggler.open-navbar-toggler span::after {
-        transform: translateY(-3px) rotate(-45deg);
-        /* transform: translateY(-3px) scale(0.75) rotate(-45deg); */
+    .kontainer-admin-kiri {
+        width: 100%;
     }
 }
 
-/* navbar horizontal */
-/* nav{
-    background-color: #688ea4;
-    color: white; 
-    width:100%; 
-    padding:20px;
-    width: 100%;
-    position: fixed;
-} */
-
-/* .hero{
-    padding-top: 100px;
-    font-size: 29px;
-    color: var(--fonts);
+/* Large devices (laptops/desktops, 992px and up) */
+@media screen and (max-width: 1180px) {
+   /* tampilan responsive layar monitor lebar dan tv */
 }
-
-#icon{
-    cursor:pointer;
-} */

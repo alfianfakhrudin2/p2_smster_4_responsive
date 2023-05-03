@@ -1,11 +1,8 @@
-// $("#formValidation").validate({
+var overlayloader = document.getElementById("loader");
+window.addEventListener("load", function(){
+    overlayloader.style.display = "none";
+})
 
-//     rules:{
-//         username: {
-//             minlength: 2
-//     }
-
-//     submitHandler: function(form) {
-//       form.submit();
-//     }
-//    });
+// $(window).load(function(){
+//     $("#loader).fadeout("slow");
+// })
