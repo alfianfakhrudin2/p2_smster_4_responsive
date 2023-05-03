@@ -1,39 +1,60 @@
-$(document).ready(function()
-{
-    $("#login").click(function()
-    {
-        var uid = $("#uid").val();
-        var password = $("#password").val();
+// $("#login").validate(){
+//     var username = document.getElementById("username").value;
+//     var password = document.getElementById("password").value;
+//     if ( username == "Formget@gmail.com" && password == "123"){
         
-        //checking for blank fields
-        if( uid =='' || password =='')
-        {
-            $('input[type="text"],input[type="password"]').css("border","2px solid red");
-            $('input[type="text"],input[type="password"]').css("box-shadow","0 0 3px red");
-            alert("Please fill all fields...!!!!!!");
-        }	
-        else 
-        {
-            if ( password.length < 8 )
-            {
-                $('input[type="password"]').css("border","2px solid red");
-                $('input[type="password"]').css("box-shadow","0 0 3px red");
-                alert(  'password must be of minimum 8 characters');
-                    $('#password').val('');
-            }
-            else {
-                alert('Welcome  '+ uid + '!!!');
-            }   
-        }
-    });
+//         const Toast = Swal.mixin({
+//             toast: true,
+//             position: 'top',
+//             showConfirmButton: false,
+//             timer: 3000,
+//             timerProgressBar: true,
+//             didOpen: (toast) => {
+//                 toast.addEventListener('mouseenter', Swal.stopTimer)
+//                 toast.addEventListener('mouseleave', Swal.resumeTimer)
+//                 }
+//             })
+            
+//             Toast.fire({
+//                 icon: 'success',
+//                 title: 'Log in successfully'
+//             }).then(function() {
+//             window.location = "Dashboard.html"; // Redirecting to other page.
+//         });
+    
+//     return false;
+//     }else{
+//         const Toast = Swal.mixin({
+//             toast: true,
+//             position: 'top',
+//             showConfirmButton: false,
+//             timer: 3000,
+//             timerProgressBar: true,
+//             didOpen: (toast) => {
+//             toast.addEventListener('mouseenter', Swal.stopTimer)
+//             toast.addEventListener('mouseleave', Swal.resumeTimer)
+//             }
+//         })
+        
+//         Toast.fire({
+//             icon: 'error',
+//             title: 'Log in Failed'
+//         })
+//     }
+// }
 
-    $("input").focus(function(){
-        $(this).css("background-color","#cccccc");
-        $(this).css("color","#000");
-    });
-
-    $("input").blur(function(){
-        $(this).css("background-color","#ffffff");
-        $(this).css("color"," #4f4f4f"); 
-        });
-});
+function auth(){
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if( username == "Alfianganteng" && password == "admin123"){
+        window.location.assign("../../web/Admin/Dashboard.html");
+        alert("Login Successfully");
+    } else {
+        // Toast.fire({
+        //     icon: 'error',
+        //     title: 'Log in Failed'
+        // })
+        alert("Login Invalid");
+        return
+    }
+}

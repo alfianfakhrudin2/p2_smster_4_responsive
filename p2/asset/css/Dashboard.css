@@ -54,13 +54,14 @@ a.logoutnyaa:hover {
 width: 200px;
 height: 70px;
 left: 38px;
-top: 100.84px;
+/* top: 1410.84px; */
 background: #36539F;
 box-shadow: 2px 4px 6px rgba(255, 255, 255, 0.3);
 border-radius: 10px;
 color: whitesmoke;
 border: none;
-
+text-align: center;
+align-items: vertical;
 }
 
 .tmbl2-logout{
@@ -196,7 +197,7 @@ border: none;
 .sidenav .theme img{
     width: 20px;
     height: 20px;
-    margin-rigth: 10px;
+    margin-right: 10px;
 }
 
 .sidenav a:hover {
