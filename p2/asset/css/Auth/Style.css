@@ -44,7 +44,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 0px 13px 13px 0px;
-    background-color: #fbfcf8;
+    background-color: #2C394B;
     padding: 3rem;
 }
 
@@ -57,7 +57,7 @@ body {
     font-weight: 500;
     text-align: center;
     position: relative;
-    color: #36539F;
+    color: #fff;
     font-family: 'Kanit', sans-serif;
 }
 
@@ -86,6 +86,7 @@ form .txt_field{
     border: none;
     background: none;
     outline: none;
+    color: white;
 }
 .txt_field label{
     position: absolute;

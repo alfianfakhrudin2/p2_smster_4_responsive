@@ -13,37 +13,37 @@ function myFunction() {
 
 
 // loading bar animated
-const element = document.getElementById('timer');
-const anStarted = Date.now();
-const a = 100;
-const max = 1180;
-function initTimer() {
-    let transformOffset = 0;
-    let rafId = 0;
-    let initial = 0;
+// const element = document.getElementById('timer');
+// const anStarted = Date.now();
+// const a = 100;
+// const max = 1180;
+// function initTimer() {
+//     let transformOffset = 0;
+//     let rafId = 0;
+//     let initial = 0;
 
-        const animate = function() {
-        transformOffset = Math.floor((Date.now() - anStarted) / max) * -1;
-        element.style.transform = `translateX(${transformOffset}%)`;
-        };
+//         const animate = function() {
+//         transformOffset = Math.floor((Date.now() - anStarted) / max) * -1;
+//         element.style.transform = `translateX(${transformOffset}%)`;
+//         };
 
-        const run = timestamp => {
-        if (!initial || timestamp - initial >= max) {
-            initial = timestamp;
-            animate();
-        }
+//         const run = timestamp => {
+//         if (!initial || timestamp - initial >= max) {
+//             initial = timestamp;
+//             animate();
+//         }
 
-        rafId = requestAnimationFrame(run);
+//         rafId = requestAnimationFrame(run);
 
-        if (Math.abs(transformOffset) >= a) {
-            cancelAnimationFrame(rafId);
-            rafId = 0;
-        }
-    };
+//         if (Math.abs(transformOffset) >= a) {
+//             cancelAnimationFrame(rafId);
+//             rafId = 0;
+//         }
+//     };
 
-    run();
-}
-initTimer();
+//     run();
+// }
+// initTimer();
 
 // open-modal and control logic
 var registerForm = document.querySelector("#register-form");
@@ -96,9 +96,9 @@ var imgUrl;
 
 // Data Input Logic
 // ini yang bener seharusnya
-registerForm.onsubmit = function(e){
+// registerForm.onsubmit = function(e){
 // ini yang alternatif
-// registerBtn.onclick = function(e){
+registerBtn.onclick = function(e){
     e.preventDefault();
     registrationData();
     getDataFromLocal();
@@ -131,7 +131,7 @@ function registrationData(){
     localStorage.setItem("userData",userString);
     swal({
         title: "Success!",
-        text: "Data sudah masuk kedalam Storage!",
+        text: "Data has been entered into Storage!",
         icon: "success",
     });
 }
@@ -178,8 +178,8 @@ const getDataFromLocal = () =>{
 
             // Animasi Modal
             swal({
-                title: "Yakin Gak, Mau Dihapus?",
-                text: "Kalo Udah terlanjur gak bisa dipulihin lagi loh ini file boongan-nyaa!",
+                title: "Are you sure you want to delete it?",
+                text: "If it has already been deleted, it can't be recovered anymore, this data!",
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
@@ -193,11 +193,11 @@ const getDataFromLocal = () =>{
                     localStorage.setItem("userData",JSON.stringify(userData));
                     tr.remove();
                     // =========================================
-                  swal("Poof! Dah Hilang!", {
+                  swal("Poof! data has been deleted!", {
                     icon: "success",
                   });
                 } else {
-                  swal("Eits, Santai.. file boongan-nyaa Aman!");
+                  swal("The data wasn't deleted, it's safe!");
                 }
               });
         }
@@ -328,8 +328,8 @@ var delAllBox = document.querySelector("#del-all-box");
 delAllBtn.addEventListener('click',()=>{
     if(delAllBox.checked == true){
         swal({
-            title: "Yakin Gak, Mau Dihapus?",
-            text: "Kalo Udah terlanjur gak bisa dipulihin lagi loh ini file boongan-nyaa!",
+            title: "Are you sure you want to delete it?",
+            text: "If it has already been deleted, it can't be recovered anymore, this data!",
             icon: "warning",
             buttons: true,
             dangerMode: true,
@@ -340,18 +340,18 @@ delAllBtn.addEventListener('click',()=>{
                 if (willDelete) {
                     localStorage.removeItem("userData");
                     window.location = location.href;
-                swal("Poof! Dah Hilang!", {
+                swal("Poof! data has been deleted!", {
                     icon: "success",
                 });
                 } else {
-                swal("Eits, Santai.. file boongan-nyaa Aman!");
+                swal("The data wasn't deleted, it's safe!");
                 }
             });
     }
     else{
         swal({
             title: "Delete All",
-            text: "Kamu baru saja menekan Tombol Delete All, pastikan Checkbox nya di tekan juga, jika tidak, berarti kamu iseng atau bahkan mengantuk karena menekan tombol ini!",
+            text: "You just pressed the Delete All button, make sure the secured button is pressed too!",
             icon: "warning",
             closeOnClickOutside: true,
             closeOnEsc: true,
@@ -359,6 +359,14 @@ delAllBtn.addEventListener('click',()=>{
     }
 })
 
+
+// modal logout
+$('.buka-modal').click(function(){
+    $('.js-logout-modal').toggleClass('modalnya-ada').toggleClass('modalnya-gada');
+});
+$('.tutup-modal').click(function(){
+    $('.js-logout-modal').toggleClass('modalnya-ada').toggleClass('modalnya-gada');
+});
 
 
 

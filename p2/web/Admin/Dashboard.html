@@ -7,34 +7,46 @@
     <meta name="description" content="Project 2 for Web Dev">
 
     <!-- timerbar // matikan Meta Auto Refresh jika timerbar di matikan -->
-    <meta http-equiv="refresh" content="120">
+    <!-- <meta http-equiv="refresh" content="120"> -->
 
-    <title>Mobile Legends CRUD</title>
+    <title>Mobile Legends Admin</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../../asset/css/Dashboard.css">
-    <link rel="shortcut icon" href="https://apprecs.org/ios/images/app-icons/256/e7/1160056295.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../../asset/img/logo.png" type="image/x-icon">
+
+    <!-- font-awesome -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- sweetalert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
 
 </head>
 <body>
+    <!-- splash screen -->
     <div id="loader"></div>
+
     <!-- timerbar // matikan timerbar jika Meta Auto Refresh di matikan -->
-    <div class="timer-bar-container"><div id="timer" class="timer-bar" ></div></div>
+    <!-- <div class="timer-bar-container"><div id="timer" class="timer-bar" ></div></div> -->
 
 
     <!-- Header -->
     <header class="header">
-        <h4 class="judul-atas-banget">Mobile Legends CRUD</h4>
+        <h4 class="judul-atas-banget">Heroes Mobile Legends ADMIN</h4>
         <div class="menu">
             <a href="#?1" class="menu-item">Banner</a>
             <a href="#?2" class="menu-item">Data Table</a>
         </div>
         <div class="menu-right">
-            <p class="copyright-version">2023 <a href="http://colorfullyous.my.id/shortlink" target="_blank" rel="noopener noreferrer">Colorfullyous Graphitie</a> - Version 2.2.12</p>
+            <p class="copyright-version">2023 <a href="http://colorfullyous.my.id/shortlink" target="_blank" rel="noopener noreferrer">Colorfullyous Graphitie</a> - Version 2.4.22</p>
             <!-- <a href="#" class="tombol-logout" id="tombol-logout" aria-label="Logout Button" onclick="logoutFunctionhere()"><i class="fa fa-sign-out"></i></a> -->
-            <a class="tombol-logout" href="../Auth/Main.html" id="tombol-logout" aria-label="Logout Button"><i class="fa fa-sign-out"></i></a>
+            <a class="tombol-logout buka-modal" id="tombol-logout" aria-label="Logout Button"><i class="fa fa-sign-out"></i></a>
         </div>
     </header>
 
@@ -54,7 +66,7 @@
         <!-- kontainer kanan -->
         <div class="kontainer-tombol-kanan">
             <i class="fa fa-search icon-cari"></i>
-            <input type="text" placeholder="cari disini ..." class="searchbar" id="searchme">
+            <input type="text" placeholder="Search here ..." class="searchbar" id="searchme">
             <!-- <button class="tombol">Cari</button> -->
         </div>
     </div>
@@ -63,9 +75,9 @@
     <!-- TAB WELCOME ADMIN -->
     <div class="kontainer-admin" id="?1">
         <div class="kontainer-admin-kiri">
-            <span class="admin-username">Helo, Admin ✔</span>
-            <h2 class="admin-title">Selamat Datang Di Sini!</h2>
-            <p class="admin-desc">Jangan pernah menyerah saat hidup memberi kita seratus alasan untuk bersedih dan menangis, jangan pula menyerah ataupun berkeluh kesah dengan keadaan hidup kita sekarang. Sebab apa yang sekarang kita anggap kurang bisa jadi sangat berlebih bagi orang lain yang nasibnya kurang beruntung dibandingkan dengan kita</p>
+            <span class="admin-username">Hii, Admin<i class="fa fa-check-circle"></i></span>
+            <h2 class="admin-title">Welcome Here!</h2>
+            <p class="admin-desc">Start input latest info of Mobile legends Heroes! Come on! admins, let's update the information. So what are you waiting for? Get back into the game and start exploring all the new content that Mobile Legends has to offer. With so many heroes, items, and game modes to choose from, there's never been a better time to jump in and start playing. Keep an eye out for future updates and releases, and we'll see you on the battlefield!</p>
         </div>
         <div class="kontainer-admin-kanan">
 
@@ -114,7 +126,7 @@
                     <img id="profile-pic" src="https://cdn.iconscout.com/icon/free/png-256/free-add-plus-3114469-2598247.png" alt="" width="128px" height="128px" class="gambar-profile">
                     <input id="upload-field" type="file" class="input-gambar">
                 </div>
-                <span class="caption-profile">Ini Gambar Icon Hero</span>
+                <span class="caption-profile">This is the Hero Icon Picture</span>
             </div>
 
             <div class="modal-kanan">
@@ -185,33 +197,46 @@
 
                     <div class="bungkus-modal-input">
                         <label for="hskill3" class="label-input">3rd Skill</label>
-                        <span class="label-input-desc">Skill yang bisa jadi Kekuatan Utama Hero tersebut | biasa merupakan <b>Skill Ultimate</b></span>
+                        <span class="label-input-desc">Skill yang bisa jadi Kekuatan Utama Hero tersebut | bisa berupa <b>Skill Ultimate</b></span>
                         
                         <input type="text" required class="modal-input" id="hskill3" placeholder="Skill 3">
                     </div>
 
                     <div class="bungkus-modal-input">
                         <label for="hskill4" class="label-input">4th Skill</label>
-                        <span class="label-input-desc">Skill yang bisa jadi Kekuatan Utama Hero tersebut | biasa merupakan <b></b> maupun <b>Skill Unique</b></span>
+                        <span class="label-input-desc">Skill yang bisa jadi Kekuatan Utama Hero tersebut | bisa berupa <b></b> maupun <b>Skill Unique</b></span>
                         
                         <input type="text" required class="modal-input" id="hskill4" placeholder="Skill 4">
                     </div>
 
                     <div class="bungkus-modal-input">
                         <label for="htips" class="label-input">Tips & Tricks</label>
-                        <span class="label-input-desc">Yaudah, Tips n Trick</span>
+                        <span class="label-input-desc">Tips n Trick cara menggunakan hero</span>
                         
                         <input type="text" required class="modal-input" id="htips" placeholder="Tips & Trick">
                     </div>
 
                     <div class="kontainer-tombol-2">
-                        <button id="register-btn" class="tombol tombol-register"><i class="fa fa-add"></i>Register</button>
+                        <button id="register-btn" class="tombol tombol-register"><i class="fa fa-add"></i>Save</button>
                         <button id="update-btn" class="tombol tombol-update" disabled="disabled"><i class="fa fa-pen-square"></i>Update</button>
                     </div>
 
                 </form>
             </div>
 
+        </div>
+    </div>
+
+    <!-- modal logout -->
+    <div class="modal-logout-area modalnya-gada js-logout-modal">
+        <div class="modal-logout-overlay tutup-modal"></div>
+        <div class="bungkus-modal-logout">
+            <img src="../../asset/img/tanda-seru.svg" alt="tanda-seru" class="modal-logout-icon">
+            <h2 class="modal-logout-title">Are you sure you want to logout?</h2>
+            <div class="modal-logout-btn-box">
+                <a href="../Auth/Main.html" class="modal-logout-btn">Yes</a>
+                <a class="modal-logout-btn tutup-modal">No</a>
+            </div>
         </div>
     </div>
 

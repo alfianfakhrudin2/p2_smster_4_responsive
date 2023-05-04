@@ -27,7 +27,8 @@ function CreateCaptcha() {
         x = c.width / 2,
         img = new Image();
 
-    img.src = "./img/bg-capcha.jpg";
+        // img/bg-capcha.jpg
+    img.src = "../img/bg-capcha.jpg";
     img.onload = function () {
         var pattern = ctx.createPattern(img, "repeat");
         ctx.fillStyle = pattern;
